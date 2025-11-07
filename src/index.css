@@ -1,0 +1,11 @@
+.table-dark th, .table-dark td {
+  border-color: #444 !important;
+}
+
+.bg-secondary {
+  background-color: #222 !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
