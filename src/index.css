@@ -1,11 +1,71 @@
-.table-dark th, .table-dark td {
-  border-color: #444 !important;
+/* index.css — Dark & Light theme styles + glows + responsive tweaks */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(120deg,#0b0f1a,#210a0a);
+  color: #e6eef8;
 }
 
-.bg-secondary {
-  background-color: #222 !important;
+.result-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.result-card .label { font-size: 0.9rem; color: #aab7c7; }
+.result-card .value { margin-top: 6px; font-weight: 700; font-size: 1.1rem; color: #fff; }
+
+.stat-card {
+  background: rgba(255,255,255,0.02);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.stat-title { font-size: .9rem; color: #c7c9d1; }
+.stat-value { font-weight: 700; font-size: 1.05rem; color: #ffd166; }
+
+.macro-pill {
+  background: rgba(255,255,255,0.03);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.03);
+  min-width: 110px;
+  text-align: center;
+}
+.macro-label { font-size: .8rem; color:#bfcbdc; }
+.macro-value { font-weight:700; color:#fff; }
+
+.quote-box {
+  background: rgba(0,0,0,0.35);
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: inline-block;
+  color: #ffd;
+  border: 1px solid rgba(255,255,255,0.03);
 }
 
-.shadow-sm {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+.glow-btn {
+  box-shadow: 0 6px 18px rgba(255, 120, 0, 0.12);
+  transition: transform .12s ease, box-shadow .12s ease;
 }
+.glow-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255, 100, 0, 0.18); }
+
+.result-card, .stat-card, .macro-pill { transition: transform .12s ease, box-shadow .12s ease; }
+.result-card:hover, .stat-card:hover { transform: translateY(-3px); }
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .result-card .value { font-size: 1rem; }
+  .quote-box { font-size: 0.95rem; padding: 8px 10px; }
+  .macro-pill { min-width: 90px; padding: 6px 10px; }
+}
+
+/* light theme adjustments (when container background switches to light) */
+body.light {
+  background: linear-gradient(120deg,#f8f9fa,#e0e0e0);
+  color: #0b1320;
+}
+
+/* small table responsiveness */
+.table-responsive { overflow-x: auto; }
