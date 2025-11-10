@@ -11,6 +11,8 @@ const QUOTES = [
   "Eat clean, train dirty.",
   "Your body is a reflection of your lifestyle."
 ];
+// redeploy trigger
+
 
 export default function App() {
   const [theme, setTheme] = useState("dark");
