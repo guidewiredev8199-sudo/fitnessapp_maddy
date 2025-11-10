@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 export default function App() {
-  const [name, setName] = useState("Madhu");
+  const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
   const [heightFeet, setHeightFeet] = useState("");
@@ -12,8 +12,8 @@ export default function App() {
   const [weight, setWeight] = useState("");
   const [activity, setActivity] = useState("");
   const [goal, setGoal] = useState("");
-  const [dietType, setDietType] = useState("nonveg");
-  const [intensity, setIntensity] = useState("moderate");
+  const [dietType, setDietType] = useState("");
+  const [intensity, setIntensity] = useState("");
 
   const [bmi, setBmi] = useState(null);
   const [tdee, setTdee] = useState(null);
@@ -177,6 +177,7 @@ export default function App() {
           <div className="col-md-6">
             <label>Diet Type</label>
             <select className="form-select" value={dietType} onChange={(e)=>setDietType(e.target.value)}>
+               <option value="">Select</option>
               <option value="nonveg">Non-Vegetarian</option>
               <option value="veg">Vegetarian</option>
             </select>
@@ -184,6 +185,7 @@ export default function App() {
           <div className="col-md-6">
             <label>Intensity</label>
             <select className="form-select" value={intensity} onChange={(e)=>setIntensity(e.target.value)}>
+               <option value="">Select</option>
               <option value="mild">Mild</option>
               <option value="moderate">Moderate</option>
               <option value="extreme">Extreme</option>
